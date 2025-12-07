@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Operations Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+body { background: #e0e0e0; color: #1a1a1a; overflow-x: hidden; }
+
+/* ---------------- WRAPPER ---------------- */
+.page-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+  width: 250px; background: #3a3a4d; flex-shrink: 0; display: flex; flex-direction: column;
+  height: 100vh; transition: all 0.3s; position:absolute; top: 0; left: 0; z-index: 100;
+}
+.sidebar h2 { text-align: center; padding: 20px 0; font-size: 22px; border-bottom: 1px solid #555; color: #00bcd4; }
+.sidebar a {
+  padding: 15px 20px; display: flex; align-items: center; color: #dcdcdc;
+  text-decoration: none; cursor: pointer; transition: all 0.3s;
+}
+.sidebar a i { margin-right: 10px; width: 20px; text-align: center; color: #00bcd4; }
+.sidebar a.active, .sidebar a:hover { background: #50506a; color: #00e5ff; box-shadow: 0 0 12px #00e5ff; }
+
+/* ---------------- MAIN ---------------- */
+.main {
+  flex: 1; margin-left: 250px; padding: 20px; transition: margin-left 0.3s;
+}
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.header h1 { color: #00bcd4; }
+.toggle-btn { display: none; font-size: 24px; cursor: pointer; color: #00bcd4; }
+
+/* ---------------- CARDS ---------------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 20px; }
+.card {
+  background: #f0f0f0; padding: 15px; border-radius: 12px; box-shadow: 0 0 8px #00bcd4; text-align: center; transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card i { font-size: 26px; margin-bottom: 8px; color: #00bcd4; }
+.card h3 { margin-bottom: 5px; font-size: 16px; color: #1a1a1a; }
+.card p { color: #555; font-size: 14px; }
+
+/* ---------------- CHARTS ---------------- */
+.chart-container { background: #f0f0f0; padding: 15px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 0 8px #00bcd4; }
+.chart-container h3 { margin-bottom: 10px; font-size: 16px; color: #00bcd4; }
+canvas { max-height: 250px !important; }
+
+/* ---------------- PROGRESS BAR ---------------- */
+.progress-bar {
+  height: 15px; width: 100%; background: #3a3a4d; border-radius: 10px; margin-bottom: 10px; overflow: hidden;
+  box-shadow: inset 0 0 5px #00bcd4;
+}
+.progress-bar-inner {
+  height: 100%; width: 0; background: #00bcd4; border-radius: 10px; text-align: right; padding-right: 5px;
+  line-height: 15px; color: #3a3a4d; transition: width 0.5s; font-size: 12px;
+}
+
+/* ---------------- TABLE ---------------- */
+.table-container {
+  background: #f0f0f0; padding: 15px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 0 8px #00bcd4;
+  overflow-x: auto;
+}
+.table-container table { width: 100%; border-collapse: collapse; color: #1a1a1a; font-size: 14px; }
+.table-container th, .table-container td { padding: 8px; text-align: left; border-bottom: 1px solid #00bcd4; }
+.table-container th { color: #00bcd4; }
+
+/* ---------------- TEAM ---------------- */
+.team-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
+.team-card {
+  background: #f0f0f0; padding: 12px; border-radius: 12px; box-shadow: 0 0 8px #00bcd4; text-align: center; transition: transform 0.3s;
+}
+.team-card:hover { transform: translateY(-3px); }
+.team-card h3 { font-size: 14px; color: #1a1a1a; }
+.team-card p { font-size: 12px; color: #555; }
+
+/* ---------------- SETTINGS FORM ---------------- */
+.settings-form {
+  background: #f0f0f0; padding: 15px; border-radius: 12px; box-shadow: 0 0 8px #00bcd4;
+}
+.settings-form input, .settings-form select, .settings-form button {
+  width: 100%; padding: 8px; margin-bottom: 8px; border-radius: 6px; border: none; font-size: 14px; background: #e0e0e0; color: #1a1a1a;
+}
+.settings-form button { background: #00bcd4; color: #fff; cursor: pointer; opacity: 0.8; }
+.settings-form button.enabled { opacity: 1; }
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1024px) { 
+  .main { margin-left: 20px; margin-right: 20px; }
+}
+@media (max-width: 768px){
+  .sidebar { left: -250px; position: fixed; width: 200px; height: 100%; }
+  .sidebar.active { left: 0; }
+  .main { margin-left: 0; padding: 15px; }
+  .toggle-btn { display: block; }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
+  .chart-container { padding: 12px; }
+  .team-container { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .settings-form input, .settings-form select, .settings-form button { font-size: 13px; }
+}
+
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<div class="page-wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <h2>IT Operations</h2>
+    <a class="active" data-section="dashboard"><i class="fas fa-home"></i> Dashboard</a>
+    <a data-section="services"><i class="fas fa-server"></i> Services</a>
+    <a data-section="projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a data-section="analytics"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a data-section="team"><i class="fas fa-users"></i> Team</a>
+    <a data-section="settings"><i class="fas fa-cogs"></i> Settings</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="header">
+      <span class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></span>
+      <h1 id="page-title">Dashboard</h1>
+    </div>
+
+    <div id="content">
+      <!-- DASHBOARD SECTION -->
+      <div id="dashboard-section">
+        <div class="cards">
+          <div class="card"><i class="fas fa-server"></i><h3>Active Servers</h3><p id="servers-count">12 Servers</p></div>
+          <div class="card"><i class="fas fa-ticket-alt"></i><h3>Open Tickets</h3><p id="tickets-count">24 Tickets</p></div>
+          <div class="card"><i class="fas fa-project-diagram"></i><h3>Completed Projects</h3><p id="projects-count">8 Projects</p></div>
+          <div class="card"><i class="fas fa-users"></i><h3>Team Members</h3><p id="team-count">6 Active</p></div>
+        </div>
+
+        <div class="chart-container">
+          <h3>Server Uptime</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Tickets (Last 12 Months)</h3>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Server Load</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="progress-container">
+          <h3>Service Availability</h3>
+          <div class="progress-bar"><div class="progress-bar-inner" data-width="95">0%</div></div>
+          <div class="progress-bar"><div class="progress-bar-inner" data-width="88">0%</div></div>
+          <div class="progress-bar"><div class="progress-bar-inner" data-width="76">0%</div></div>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div id="services-section" style="display:none;" class="table-container">
+        <h2>Services Status</h2>
+        <table>
+          <tr><th>Service</th><th>Status</th><th>Uptime</th><th>Incidents</th></tr>
+          <tr><td>Web Hosting</td><td>Active</td><td>99.9%</td><td>1</td></tr>
+          <tr><td>Email Servers</td><td>Active</td><td>99.7%</td><td>2</td></tr>
+          <tr><td>Database</td><td>Maintenance</td><td>98.5%</td><td>0</td></tr>
+        </table>
+      </div>
+
+      <!-- PROJECTS -->
+      <div id="projects-section" style="display:none;" class="table-container">
+        <h2>Projects Overview</h2>
+        <table>
+          <tr><th>Project</th><th>Status</th><th>Deadline</th><th>Priority</th></tr>
+          <tr><td>Cloud Migration</td><td>In Progress</td><td>Dec 2025</td><td>High</td></tr>
+          <tr><td>App Development</td><td>Completed</td><td>Oct 2025</td><td>Medium</td></tr>
+        </table>
+      </div>
+
+      <!-- ANALYTICS -->
+      <div id="analytics-section" style="display:none;">
+        <div class="chart-container">
+          <h3>Network Traffic (Gbps)</h3>
+          <canvas id="analyticsLineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Tickets by Priority</h3>
+          <canvas id="analyticsBarChart"></canvas>
+        </div>
+      </div>
+
+      <!-- TEAM -->
+      <div id="team-section" style="display:none;" class="team-container">
+        <div class="team-card"><h3>Alice</h3><p>Network Engineer</p><p>Status: Online</p></div>
+        <div class="team-card"><h3>Bob</h3><p>Backend Developer</p><p>Status: Online</p></div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="settings-section" style="display:none;">
+        <form class="settings-form" id="settingsForm" action="404error.html">
+          <input type="text" placeholder="Company Name" id="companyName" required>
+          <select id="themeSelect" required>
+            <option value="">Select Theme</option>
+            <option>Theme: Dark</option>
+            <option>Theme: Light</option>
+          </select>
+          <button type="submit" id="saveBtn">Save Settings</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+// ---------------- SIDEBAR ----------------
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('active');
+}
+
+// ---------------- NAVIGATION ----------------
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+    const section = link.getAttribute('data-section');
+    document.getElementById('page-title').innerText = link.textContent.trim();
+    ['dashboard','services','projects','analytics','team','settings'].forEach(s =>
+      document.getElementById(s+'-section').style.display = (s===section)?'block':'none'
+    );
+
+    // Close sidebar on mobile after click
+    if(window.innerWidth <= 768){
+      document.getElementById('sidebar').classList.remove('active');
+    }
+  });
+});
+
+// ---------------- PROGRESS BAR ----------------
+document.querySelectorAll('.progress-bar-inner').forEach(bar => {
+  let val = parseInt(bar.getAttribute('data-width'));
+  bar.style.width = val+'%';
+  bar.innerText = val+'%';
+});
+
+// ---------------- CHARTS ----------------
+new Chart(document.getElementById('pieChart'), {
+  type: 'pie',
+  data: { labels:['99-100%','95-98%','<95%'], datasets:[{data:[8,3,1], backgroundColor:['#FF6B6B','#4ECDC4','#FFD93D']}] },
+  options: { responsive: true }
+});
+new Chart(document.getElementById('lineChart'), {
+  type: 'line',
+  data: { labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          datasets:[{label:'Tickets Opened',data:[30,25,35,28,40,32,30,35,28,40,32,38],borderColor:'#FF6B6B',backgroundColor:'rgba(255,107,107,0.2)',tension:0.3}]},
+  options: { responsive: true, scales:{y:{beginAtZero:true}} }
+});
+new Chart(document.getElementById('barChart'), {
+  type:'bar',
+  data:{labels:['Server1','Server2','Server3','Server4','Server5'],datasets:[{label:'CPU Load (%)',data:[65,70,60,75,50],backgroundColor:['#FF6B6B','#4ECDC4','#FFD93D','#6A4C93','#1A535C']}]},
+  options:{responsive:true,scales:{y:{max:100}}}
+});
+new Chart(document.getElementById('analyticsLineChart'), { type:'line', data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], datasets:[{label:'Network Traffic (Gbps)', data:[10,12,9,15,11,14,13], borderColor:'#6A4C93', backgroundColor:'rgba(106,76,147,0.2)', tension:0.3}]}, options:{responsive:true, scales:{y:{beginAtZero:true}}} });
+new Chart(document.getElementById('analyticsBarChart'), { type:'bar', data:{labels:['High','Medium','Low'], datasets:[{label:'Tickets', data:[12,20,8], backgroundColor:['#FF6B6B','#FFD93D','#4ECDC4']}]}, options:{responsive:true, scales:{y:{beginAtZero:true}}} });
+
+// ---------------- SETTINGS FORM ----------------
+document.getElementById('settingsForm').addEventListener('submit', e => {
+  if(!document.getElementById('companyName').value.trim() || !document.getElementById('themeSelect').value) e.preventDefault();
+});
+
+// Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '404error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+</body>
+</html>

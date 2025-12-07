@@ -1,0 +1,309 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries We Serve</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+/* Overlay */
+.overlay {
+  background: url('industries-bg.webp') no-repeat center/cover;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 60px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color:#111;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.header h1 {
+  font-size: 40px;
+  color:orangered;
+  text-shadow: 0 0 12px #00eaff;
+}
+.header p {
+  font-size: 18px;
+  color:black;
+  margin-top: 10px;
+}
+
+/* Industry Rows */
+.industries-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.industry-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.industry-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image with icon overlay */
+.industry-img {
+  flex: 1 1 300px;
+  height: 220px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,234,255,0.3);
+}
+.industry-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 36px;
+  color:orangered;
+  /* color: #00eaff; */
+  text-shadow: 0 0 8px #00eaff;
+}
+
+/* Text content without box */
+.industry-text {
+  flex: 1 1 300px;
+  color:#111; /* text color matching the background */
+}
+.industry-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color:orangered;
+}
+.industry-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.industry-text a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #00eaff;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.industry-text a:hover {
+  background: #00b8d4;
+}
+
+/* Responsive */
+@media(max-width: 992px){
+  .industry-row, .industry-row.reverse {
+    flex-direction: column;
+  }
+  .industry-img, .industry-text {
+    width: 100%;
+  }
+}
+@media(max-width: 600px){
+  .header h1 {font-size:28px;}
+  .header p {font-size:14px;}
+  .industry-text h3 {font-size:20px;}
+  .industry-text p {font-size:14px;}
+  .industry-text a {padding: 6px 12px;}
+}
+</style>
+</head>
+<body>
+
+    <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<div class="overlay">
+  <div class="container">
+    <div class="header">
+      <h1>Industries We Serve</h1>
+      <p>Delivering innovative IT solutions across multiple sectors</p>
+    </div>
+
+    <div class="industries-section">
+      <!-- Industry 1 -->
+      <div class="industry-row">
+        <div class="industry-img" style="background-image:url('indus1.webp');">
+          <i class="fas fa-landmark industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Finance & Banking</h3>
+          <p>Secure, reliable IT solutions for banking, fintech, and financial services to improve efficiency, security, and compliance.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 2 -->
+      <div class="industry-row reverse">
+        <div class="industry-img" style="background-image:url('induss2.webp');">
+          <i class="fas fa-hospital-user industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Healthcare</h3>
+          <p>Advanced IT infrastructure for hospitals, clinics, and telemedicine solutions. Optimizing patient care and secure data management.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 3 -->
+      <div class="industry-row">
+        <div class="industry-img" style="background-image:url('indus3.webp');">
+          <i class="fas fa-shopping-cart industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Retail & E-Commerce</h3>
+          <p>Digital transformation, cloud integration, and analytics solutions for retail chains and e-commerce platforms to boost growth.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 4 -->
+      <div class="industry-row reverse">
+        <div class="industry-img" style="background-image:url('indus4.webp');">
+          <i class="fas fa-chalkboard-teacher industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Education</h3>
+          <p>IT solutions for schools, universities, and e-learning platforms. Enhance learning experiences with modern digital tools.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 5 -->
+      <div class="industry-row">
+        <div class="industry-img" style="background-image:url('induss5.webp');">
+          <i class="fas fa-industry industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Manufacturing</h3>
+          <p>Smart factory solutions, IoT integration, and ERP systems to optimize production and streamline operations.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 6 -->
+      <div class="industry-row reverse">
+        <div class="industry-img" style="background-image:url('indus6.webp');">
+          <i class="fas fa-broadcast-tower industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Telecommunications</h3>
+          <p>Network management, monitoring, and cloud solutions for telecom companies to improve connectivity and reduce downtime.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 7 -->
+      <div class="industry-row">
+        <div class="industry-img" style="background-image:url('indus7.webp');">
+          <i class="fas fa-truck industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Logistics & Transportation</h3>
+          <p>Intelligent transport management, tracking, and fleet optimization solutions powered by modern IT systems.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+      <!-- Industry 8 -->
+      <div class="industry-row reverse">
+        <div class="industry-img" style="background-image:url('induss8.webp');">
+          <i class="fas fa-seedling industry-icon"></i>
+        </div>
+        <div class="industry-text">
+          <h3>Agriculture & Farming</h3>
+          <p>Smart agriculture solutions including IoT sensors, crop monitoring, and automation to increase yield and efficiency.</p>
+          <a href="404error.html">Click Here</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '404error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+
+</body>
+</html>

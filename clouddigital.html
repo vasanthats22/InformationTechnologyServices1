@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud & Infrastructure | Stackly IT Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+  html, body { overflow-x:hidden; background:#f5f7fb; color:#333; }
+
+  /* HERO */
+  .hero {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    min-height:75vh;
+    background:#0066ff;
+    color:white;
+    padding:40px 10%;
+    position:relative;
+  }
+  .hero-text {
+    flex:1;
+    min-width:300px;
+    padding-right:20px;
+  }
+  .hero-text h1 { font-size:3rem; margin-bottom:20px; }
+  .hero-text p { font-size:1.2rem; line-height:1.6; opacity:0.95; }
+  .hero-image {
+    flex:1;
+    min-width:300px;
+  }
+  .hero-image img {
+    width:100%;
+    max-width:100%;
+    height:auto;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  /* FEATURE BANNERS */
+  .feature-banner {
+    display:flex;
+    flex-wrap:wrap;
+    margin:0;
+  }
+  .banner {
+    flex:1;
+    min-width:250px;
+    padding:50px;
+    color:white;
+    text-align:center;
+  }
+  .banner.blue { background:#a8d31a; }
+  .banner.green { background:#00aa88; }
+  .banner.orange { background:#ff8800; }
+  .banner h3 { font-size:2rem; margin-bottom:15px; }
+  .banner p { font-size:1rem; line-height:1.5; }
+
+  /* TWO-COLUMN SECTIONS */
+  .two-column {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    padding:80px 10%;
+    box-sizing:border-box;
+  }
+  .two-column:nth-child(even) { flex-direction: row-reverse; }
+  .two-column img {
+    flex:1 1 100%;
+    max-width:450px; /* limits image size on desktop */
+    width:100%;
+    height:auto;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    margin:10px 0;
+  }
+  .two-column .text {
+    flex:1 1 100%;
+    margin:10px 0;
+    text-align:left;
+  }
+  .two-column .text h2 { font-size:2.2rem; margin-bottom:15px; color:#0f1f3d; }
+  .two-column .text p { line-height:1.7; color:#3b485c; }
+
+  /* VERTICAL PROCESS */
+  .process {
+    background:#f0f5ff;
+    padding:80px 10%;
+    text-align:center;
+  }
+  .process h2 { font-size:2.5rem; margin-bottom:50px; color:#0f1f3d; }
+  .process-steps { display:flex; flex-direction:column; gap:25px; max-width:700px; margin:0 auto; }
+  .step {
+    background:white;
+    padding:25px 20px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+  }
+  .step span { font-size:2rem; color:#0066ff; font-weight:bold; flex-shrink:0; }
+  .step p { color:#3b485c; font-size:1rem; line-height:1.5; }
+
+  /* CTA */
+  .cta {
+    background:#0066ff;
+    padding:60px 10%;
+    text-align:center;
+    color:white;
+  }
+  .cta h2 { font-size:2rem; margin-bottom:10px; }
+  .cta p { opacity:0.95; margin-bottom:20px; }
+  .cta a {
+    padding:12px 28px;
+    background:white;
+    color:#0066ff;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width:900px) {
+    .hero { flex-direction:column; text-align:center; }
+    .hero-text { padding:0 0 20px 0; }
+    .two-column { flex-direction:column; text-align:center; }
+    .two-column:nth-child(even) { flex-direction:column; }
+    .two-column .text { text-align:center; }
+    .two-column img { max-width:100%; }
+  }
+  @media(max-width:500px){
+    .hero-text h1 { font-size:2rem; }
+    .hero-text p { font-size:1rem; }
+    .banner h3 { font-size:1.5rem; }
+    .banner p { font-size:0.95rem; }
+    .two-column h2 { font-size:1.8rem; }
+    .two-column p { font-size:0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+   <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Cloud & Infrastructure Services</h1>
+    <p>Delivering secure, scalable, and high-performance cloud and IT infrastructure solutions to modernize your business.</p>
+  </div>
+  <div class="hero-image">
+    <img src="cloud1.webp" alt="Cloud Infrastructure">
+  </div>
+</section>
+<br><br>
+<!-- FEATURE BANNERS -->
+<section class="feature-banner">
+  <div class="banner blue">
+    <h3>Scalable Cloud</h3>
+    <p>Quickly scale applications and storage with cloud platforms like AWS, Azure, and Google Cloud.</p>
+  </div>
+  <div class="banner green">
+    <h3>High Availability</h3>
+    <p>Reliable infrastructure ensuring your systems remain online 24/7 with minimal downtime.</p>
+  </div>
+  <div class="banner orange">
+    <h3>Secure & Compliant</h3>
+    <p>Advanced security measures and regulatory compliance to protect your data.</p>
+  </div>
+</section>
+
+<!-- TWO-COLUMN SECTIONS -->
+<section class="two-column">
+  <div class="text">
+    <h2>Cloud Migration Services</h2>
+    <p>Seamlessly migrate your applications, databases, and workloads to cloud platforms with minimal disruption.</p>
+  </div>
+  <img src="cloud2.webp" alt="Cloud Migration">
+</section>
+
+<section class="two-column">
+  <div class="text">
+    <h2>Infrastructure Management</h2>
+    <p>Comprehensive management of servers, storage, networks, and virtualization for optimal performance.</p>
+  </div>
+  <img src="cloud3.webp" alt="Infrastructure Management">
+</section>
+
+<section class="two-column">
+  <div class="text">
+    <h2>Cloud Security & Monitoring</h2>
+    <p>Continuous monitoring, firewalls, and security audits to ensure your cloud infrastructure is safe and compliant.</p>
+  </div>
+  <img src="cloud4.webp" alt="Cloud Security">
+</section>
+
+<!-- VERTICAL PROCESS -->
+<section class="process">
+  <h2>Our Cloud Adoption Process</h2>
+  <div class="process-steps">
+    <div class="step"><span>01</span><p>Assessment & Planning: Understand your current infrastructure and design a roadmap.</p></div>
+    <div class="step"><span>02</span><p>Architecture Design: Create scalable and secure cloud architecture tailored to your needs.</p></div>
+    <div class="step"><span>03</span><p>Migration & Implementation: Seamlessly move workloads to the cloud with minimal downtime.</p></div>
+    <div class="step"><span>04</span><p>Monitoring & Optimization: Continuous performance monitoring and cost optimization.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Modernize Your Cloud Infrastructure?</h2>
+  <p>Contact us to implement secure, scalable, and efficient cloud solutions for your business.</p>
+  <a href="402error.html">Get in Touch</a>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header1.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '402error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+
+</body>
+</html>

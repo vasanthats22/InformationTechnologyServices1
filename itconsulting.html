@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Consulting | Stackly IT Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+html, body { overflow-x:hidden; background:#f5f7fb; color:#333; }
+
+/* HERO SECTION */
+.hero {
+  position:relative;
+  min-height:70vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  /* color: black; */
+  text-align:center;
+  padding:0 20px;
+  background: url('solution2.webp') center/cover no-repeat;
+}
+.hero::after {
+  content:"";
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+}
+.hero-content {
+  position:relative;
+  max-width:800px;
+}
+.hero-content h1 { font-size:3rem; margin-bottom:20px; }
+.hero-content p { font-size:1.2rem; line-height:1.6; opacity:0.95; }
+
+/* WHY CHOOSE US SECTION */
+.why-choose {
+  display:flex;
+  flex-wrap:wrap;
+  padding:80px 10%;
+  gap:30px;
+  align-items:center;
+  background:#eef3ff;
+}
+.why-text {
+  flex:1 1 400px;
+}
+.why-text h2 { font-size:2.5rem; margin-bottom:20px; color:#0f1f3d; }
+.why-text p { line-height:1.7; margin-bottom:15px; }
+.why-image {
+  flex:1 1 400px;
+  text-align:center;
+}
+.why-image img { max-width:100%; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+
+/* CORE CONSULTING SERVICES CARDS */
+.core-services {
+  padding:80px 10%;
+  text-align:center;
+}
+.core-services h2 { font-size:2.5rem; margin-bottom:50px; color:#0f1f3d; }
+.core-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.core-card {
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.core-card:hover { transform:translateY(-6px); }
+.core-card i { font-size:2.5rem; color:#0066ff; margin-bottom:15px; }
+.core-card h3 { font-size:1.3rem; margin-bottom:10px; }
+.core-card p { font-size:0.95rem; line-height:1.5; }
+
+/* CONSULTING APPROACH */
+.approach {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('insight6.webp') center/cover no-repeat;
+  color:white;
+  padding:80px 10%;
+  text-align:center;
+}
+.approach h2 { font-size:2.5rem; margin-bottom:40px; }
+.approach p { max-width:700px; margin:0 auto; line-height:1.7; }
+
+/* CTA SECTION */
+.cta {
+  background:#001f3d;
+  color:white;
+  text-align:center;
+  padding:60px 10%;
+}
+.cta h2 { font-size:2rem; margin-bottom:15px; }
+.cta p { opacity:0.95; margin-bottom:20px; }
+.cta a {
+  padding:12px 28px;
+  background:#00d1ff;
+  color:#001f3d;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+.cta a:hover { background:white; color:#001f3d; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .why-choose { flex-direction:column; text-align:center; }
+  .why-text, .why-image { flex:1 1 100%; }
+}
+@media(max-width:500px){
+  .hero-content h1 { font-size:2rem; }
+  .hero-content p { font-size:1rem; }
+  .why-text h2, .core-services h2, .approach h2 { font-size:2rem; }
+  .core-card h3 { font-size:1.1rem; }
+}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Expert IT Consulting Services</h1>
+    <p>Helping businesses leverage technology to achieve efficiency, innovation, and secure growth. Our experts analyze, plan, and implement IT strategies tailored for your success.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-choose">
+  <div class="why-text">
+    <h2>Why Choose Stackly IT Consulting?</h2>
+    <p>We provide strategic IT guidance that aligns technology investments with business goals, ensuring optimal performance and ROI.</p>
+    <p>Our consultants identify gaps, optimize infrastructure, and implement best practices for risk management, cloud adoption, and process automation.</p>
+  </div>
+  <div class="why-image">
+    <img src="itconsultant.webp" alt="IT Consulting">
+  </div>
+</section>
+
+<!-- CORE CONSULTING SERVICES -->
+<section class="core-services">
+  <h2>Our Core IT Consulting Services</h2>
+  <div class="core-grid">
+    <div class="core-card">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Strategic IT Planning</h3>
+      <p>Aligning technology strategy with your business objectives for sustainable growth.</p>
+    </div>
+    <div class="core-card">
+      <i class="fa-solid fa-network-wired"></i>
+      <h3>Infrastructure Optimization</h3>
+      <p>Enhancing IT infrastructure efficiency and scalability through expert guidance.</p>
+    </div>
+    <div class="core-card">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+      <h3>Cloud & Hybrid Solutions</h3>
+      <p>Advising on cloud migration, hybrid systems, and secure data management.</p>
+    </div>
+    <div class="core-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Security & Compliance</h3>
+      <p>Implementing best practices for cybersecurity, compliance, and risk mitigation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTING APPROACH -->
+<section class="approach">
+  <h2>Our Consulting Approach</h2>
+  <p>We start by understanding your business challenges, then design technology solutions that optimize processes, secure data, and enable digital transformation. Our iterative approach ensures continuous improvement and measurable results.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Partner with Us for IT Excellence</h2>
+  <p>Let Stackly IT Services guide your business to success with strategic IT consulting solutions.</p>
+  <a href="402error.html">Get Started</a>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header1.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '402error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+</body>
+</html>

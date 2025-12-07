@@ -1,0 +1,196 @@
+<!-- Responsive Header with Dropdown for Home1 & Home2 (Fixed Dropdown) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Services Website - Home1</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background: #0a1f44;
+      padding: 15px 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Logo */
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      display: block;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: #ff7a00;
+    }
+
+    /* Dropdown inside single button */
+    .home-link {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .home-link span {
+      margin-left: 5px;
+      font-size: 14px;
+      user-select: none;
+      color: #fff; /* dropdown arrow color changed to white */
+    }
+
+    /* Dropdown menu */
+    nav ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0a1f44;
+      min-width: 150px;
+      display: none;
+      flex-direction: column;
+      border-radius: 4px;
+      z-index: 2000;
+    }
+
+    /* Desktop hover */
+    @media (min-width: 769px) {
+      nav ul li:hover > ul {
+        display: flex;
+      }
+    }
+
+    nav ul li ul li a {
+      padding: 10px 15px;
+    }
+
+    /* Mobile Menu Button */
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0a1f44;
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li ul {
+        position: static;
+        width: 100%;
+        display: none;
+      }
+
+      nav ul li.show-submenu > ul {
+        display: block;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    /* Body padding */
+    body {
+      padding-top: 80px;
+      background: #f5f5f5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Start -->
+  <header>
+
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="Stacklylogo.webp" alt="Stackly Logo">
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="menu-btn">☰</div>
+
+    <!-- Navigation -->
+    <nav id="navBar">
+      <ul>
+        <li>
+          <!-- Home button with dropdown arrow -->
+          <div class="home-link">
+            <a href="home2.html">Home</a>
+            <!-- <span onclick="toggleSubmenuMobile(event)">▼</span> -->
+            <!-- Home dropdown arrow -->
+            <span>▼</span>
+          </div>
+          <ul>
+            <li><a href="index.html">Home1</a></li>
+          </ul>
+        </li>
+
+        <li><a href="digital.html">Digital Solutions</a></li>
+        <li><a href="software.html">Software Development</a></li>
+        <li><a href="clouddigital.html">Cloud & Infrastructure</a></li>
+        <li><a href="cybersecurity.html">Cybersecurity Services</a></li>
+        <li><a href="itconsulting.html">IT Consulting</a></li>
+        <li><a href="support.html">Support & Contact</a></li>
+        <li><a href="login2.html">User Login Access</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  
+</body>
+</html>

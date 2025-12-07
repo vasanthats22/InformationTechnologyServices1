@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Services | Stackly IT Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+html, body { overflow-x:hidden; background:#f5f7fb; color:#333; }
+
+/* HERO SPLIT */
+.hero-split {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  min-height:70vh;
+  padding:60px 10%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('digital1.webp') center/cover no-repeat;
+  color:white;
+}
+.hero-split .hero-text {
+  flex:1 1 400px;
+}
+.hero-split .hero-text h1 { font-size:3rem; margin-bottom:20px; }
+.hero-split .hero-text p { font-size:1.2rem; line-height:1.6; opacity:0.95; }
+.hero-split .hero-image {
+  flex:1 1 400px;
+  text-align:right;
+}
+.hero-split .hero-image img {
+  max-width:100%;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* FULL-WIDTH INFO WITH OVERLAY CARDS */
+.info-bg {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home213.webp') center/cover no-repeat;
+  position:relative;
+  color:white;
+  padding:80px 10%;
+}
+.info-cards {
+  position:relative;
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  justify-content:center;
+  z-index:1;
+}
+.info-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(6px);
+  padding:25px 20px;
+  border-radius:12px;
+  min-width:250px;
+  text-align:center;
+  transition:0.3s;
+}
+.info-card:hover { transform:translateY(-6px); }
+.info-card i { font-size:2rem; margin-bottom:10px; color:#00d1ff; }
+.info-card h3 { margin-bottom:10px; font-size:1.3rem; }
+.info-card p { font-size:0.95rem; line-height:1.5; }
+
+/* HORIZONTAL SCROLL SERVICES */
+.services-scroll {
+  padding:80px 10%;
+  background:#eef3ff;
+}
+.services-scroll h2 { text-align:center; font-size:2.5rem; margin-bottom:40px; color:#0f1f3d; }
+.service-cards {
+  display:flex;
+  overflow-x:auto;
+  gap:20px;
+  padding-bottom:10px;
+}
+.service-card {
+  min-width:250px;
+  background:white;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  flex:0 0 auto;
+}
+.service-card i { font-size:2rem; color:#0066ff; margin-bottom:10px; }
+.service-card h3 { margin-bottom:10px; font-size:1.2rem; color:#0f1f3d; }
+.service-card p { font-size:0.95rem; line-height:1.5; }
+
+/* STATS SECTION */
+.stats {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:40px;
+  padding:80px 10%;
+  text-align:center;
+}
+.stat-box {
+  flex:1 1 150px;
+  background:#0066ff;
+  color:white;
+  border-radius:12px;
+  padding:30px 20px;
+}
+.stat-box h3 { font-size:2rem; margin-bottom:10px; }
+.stat-box p { font-size:1rem; opacity:0.9; }
+
+/* CTA */
+.cta {
+  background:#001f3d;
+  color:white;
+  text-align:center;
+  padding:60px 10%;
+}
+.cta h2 { font-size:2rem; margin-bottom:15px; }
+.cta p { opacity:0.95; margin-bottom:20px; }
+.cta a {
+  padding:12px 28px;
+  background:#00d1ff;
+  color:#001f3d;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+.cta a:hover { background:white; color:#001f3d; }
+
+/* SCROLLBAR HIDE */
+.service-cards::-webkit-scrollbar { display:none; }
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+  .hero-split { flex-direction:column; text-align:center; }
+  .hero-split .hero-image { text-align:center; margin-top:30px; }
+  .stats { flex-direction:column; }
+}
+@media(max-width:500px){
+  .hero-split .hero-text h1 { font-size:2rem; }
+  .hero-split .hero-text p { font-size:1rem; }
+  .services-scroll h2 { font-size:2rem; }
+  .service-card h3 { font-size:1rem; }
+  .info-card h3 { font-size:1.2rem; }
+  .info-card p { font-size:0.9rem; }
+  .stat-box h3 { font-size:1.8rem; }
+  .stat-box p { font-size:0.9rem; }
+}
+</style>
+</head>
+<body>
+  <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO SPLIT -->
+<section class="hero-split">
+  <div class="hero-text">
+    <h1>Cybersecurity Services</h1>
+    <p>Protect your business from cyber threats with our advanced security solutions, ensuring safe digital operations and business continuity.</p>
+  </div>
+  <div class="hero-image">
+    <img src="cyber1.webp" alt="Cybersecurity">
+  </div>
+</section>
+
+<br><br>
+
+<!-- FULL-WIDTH INFO CARDS -->
+<section class="info-bg">
+  <div class="info-cards">
+    <div class="info-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>Threat Prevention</h3>
+      <p>Proactively monitor and prevent cyber attacks before they happen.</p>
+    </div>
+    <div class="info-card">
+      <i class="fa-solid fa-lock"></i>
+      <h3>Data Security</h3>
+      <p>Protect sensitive business data from breaches and leaks.</p>
+    </div>
+    <div class="info-card">
+      <i class="fa-solid fa-user-shield"></i>
+      <h3>Access Control</h3>
+      <p>Manage user permissions to safeguard critical systems.</p>
+    </div>
+    <div class="info-card">
+      <i class="fa-solid fa-bug"></i>
+      <h3>Incident Response</h3>
+      <p>Respond quickly to security events and minimize impact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZONTAL SCROLL SERVICES -->
+<section class="services-scroll">
+  <h2>Our Cybersecurity Services</h2>
+  <div class="service-cards">
+    <div class="service-card">
+      <i class="fa-solid fa-network-wired"></i>
+      <h3>Network Security</h3>
+      <p>Firewalls, IDS, and secure VPN setups for your network protection.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-desktop"></i>
+      <h3>Endpoint Security</h3>
+      <p>Protect desktops, laptops, and mobile devices from malware and attacks.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-cloud"></i>
+      <h3>Cloud Security</h3>
+      <p>Secure cloud environments with encryption, access control, and monitoring.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Analytics & Monitoring</h3>
+      <p>Real-time monitoring and analytics to detect anomalies and threats.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats">
+  <div class="stat-box">
+    <h3>99.9%</h3>
+    <p>Network Uptime Secured</p>
+  </div>
+  <div class="stat-box">
+    <h3>500+</h3>
+    <p>Threats Prevented Daily</p>
+  </div>
+  <div class="stat-box">
+    <h3>24/7</h3>
+    <p>Continuous Monitoring</p>
+  </div>
+  <div class="stat-box">
+    <h3>100+</h3>
+    <p>Security Audits Completed</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Start Securing Your Business Today</h2>
+  <p>Partner with us to implement robust cybersecurity solutions and protect your critical assets.</p>
+  <a href="402error.html">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header1.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '402error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+
+</body>
+</html>

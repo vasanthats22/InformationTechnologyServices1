@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly IT Services - Home 2 (Updated Responsive)</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+  }
+
+  /* FIX: Prevent horizontal scroll */
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
+
+  body{
+    background:#f7f9fc;
+  }
+
+  /* HERO SECTION */
+  .hero2{
+    background:url('home211.webp') center/cover no-repeat;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    padding:60px;
+    color:#f0f0f0;
+    position:relative;
+  }
+  .hero2::after{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(0,0,0,0.55);
+  }
+  .hero2-content{
+    max-width:600px;
+    position:relative;
+    z-index:2;
+  }
+  .hero2 h1{
+    font-size:3.2rem;
+    margin-bottom:15px;
+    line-height:1.2;
+    color:#ffffff;
+  }
+  .hero2 p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+    color:#e3e3e3;
+  }
+  .hero2-btns button{
+    padding:12px 28px;
+    border:none;
+    border-radius:5px;
+    font-size:1rem;
+    margin-right:10px;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .btn-primary{
+    background:#00aaff;
+    color:white;
+  }
+  .btn-primary:hover{background:#0088cc;}
+  .btn-outline{
+    background:transparent;
+    border:2px solid #ffffff;
+    color:white;
+  }
+  .btn-outline:hover{
+    background:white;
+    color:#0b1a33;
+  }
+
+  /* FEATURES */
+  .features{
+    padding:70px 20px;
+    text-align:center;
+    background:white;
+  }
+  .features h2{
+    font-size:2.3rem;
+    margin-bottom:40px;
+  }
+  .features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+    padding:0 20px;
+  }
+  .feature-box{
+    background:#f0f5ff;
+    padding:30px;
+    border-radius:12px;
+    transition:0.3s;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  }
+  .feature-box:hover{transform:translateY(-8px);}
+  .feature-box i{
+    font-size:2.4rem;
+    margin-bottom:15px;
+    color:#006aff;
+  }
+
+  /* PROCESS */
+  .process{
+    padding:70px 20px;
+    background:#eef3f9;
+    text-align:center;
+  }
+  .process h2{
+    font-size:2.3rem;
+    margin-bottom:40px;
+  }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+  }
+  .step{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  }
+  .step-number{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#00aaff;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    margin:0 auto 15px auto;
+  }
+
+  /* CASE STUDIES */
+  .case-studies{
+    padding:80px 20px;
+    background:white;
+  }
+  .case-studies h2{
+    text-align:center;
+    font-size:2.3rem;
+    margin-bottom:40px;
+  }
+  .case-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+  }
+  .case{
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  }
+  .case img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .case-content{
+    padding:20px;
+  }
+  .case-content h3{
+    margin-bottom:10px;
+    font-size:1.3rem;
+  }
+  .case-content p{
+    opacity:0.8;
+    font-size:0.95rem;
+  }
+
+  /* CTA STRIP */
+  .cta-strip{
+    background:#00214d;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+  }
+  .cta-strip button{
+    padding:12px 28px;
+    border:none;
+    background:#00aaff;
+    color:white;
+    border-radius:6px;
+    font-size:1rem;
+    margin-top:20px;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .cta-strip button:hover{
+    background:#0088cc;
+  }
+
+  /* RESPONSIVE FIXES */
+  @media(max-width:768px){
+    .hero2{
+      padding:30px;
+      min-height:auto;
+      text-align:center;
+    }
+    .hero2-btns button{
+      margin:5px 0;
+    }
+  }
+
+  @media(max-width:480px){
+    .hero2 h1{font-size:1.9rem;}
+    .hero2 p{font-size:1rem;}
+    .hero2-btns button{
+      width:100%;
+      margin-bottom:10px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero2">
+  <div class="hero2-content">
+    <h1>Next-Gen IT Services For Digital Growth</h1>
+    <p>Empowering your business with automation, AI, cloud, and advanced cybersecurity solutions.</p>
+    <div class="hero2-btns">
+      <button class="btn-primary" onclick="location.href='402error.html'">Get Started</button>
+      <button class="btn-primary" onclick="location.href='402error.html'">View Services</button>
+      <button class="btn-primary" onclick="location.href='402error.html'">Learn More</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>What Makes Us Stand Out</h2>
+  <div class="features-grid">
+    <div class="feature-box"><i class="fa-solid fa-headset"></i><h3>24/7 Monitoring</h3><p>Proactive support to ensure smooth IT operations.</p></div>
+    <div class="feature-box"><i class="fa-solid fa-cloud-arrow-up"></i><h3>Cloud Modernization</h3><p>Secure and scalable cloud-first architecture.</p></div>
+    <div class="feature-box"><i class="fa-solid fa-robot"></i><h3>Smart Automation</h3><p>Accelerate workflows with intelligent systems.</p></div>
+    <div class="feature-box"><i class="fa-solid fa-network-wired"></i><h3>Robust IT Infrastructure</h3><p>High performance networks & server systems.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <h2>Our Work Process</h2>
+  <div class="steps">
+    <div class="step"><div class="step-number">1</div><h3>Assessment</h3><p>Understanding your current IT environment.</p></div>
+    <div class="step"><div class="step-number">2</div><h3>Planning</h3><p>Strategizing custom solutions for your business.</p></div>
+    <div class="step"><div class="step-number">3</div><h3>Implementation</h3><p>Deploying systems with zero downtime.</p></div>
+    <div class="step"><div class="step-number">4</div><h3>Optimization</h3><p>Continuous improvement & 24/7 monitoring.</p></div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies">
+  <h2>Success Stories</h2>
+  <div class="case-grid">
+    <div class="case">
+      <img src="home213.webp">
+      <div class="case-content"><h3>Cloud Transformation</h3><p>Migrated entire company infrastructure reducing cost by 45%.</p></div>
+    </div>
+    <div class="case">
+      <img src="home212.webp">
+      <div class="case-content"><h3>AI Automation</h3><p>Automated support system increasing team productivity by 67%.</p></div>
+    </div>
+    <div class="case">
+      <img src="home214.webp">
+      <div class="case-content"><h3>Network Security</h3><p>Advanced monitoring preventing cyber threats effectively.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <h2>Ready To Upgrade Your IT Infrastructure?</h2>
+  <p>Let our experts help you build a smarter and safer technology environment.</p>
+  <button onclick="location.href='402error.html'">Contact Us Today</button>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header1.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer2.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '402error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+
+</body>
+</html>

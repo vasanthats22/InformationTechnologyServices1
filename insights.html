@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources - Stackly IT Services</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+<style>
+    /* -------- FIX HORIZONTAL SCROLL -------- */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #f2f4f7;
+        box-sizing: border-box;
+    }
+
+    img, * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* -------- Hero Section -------- */
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                    url('insight1.webp')
+                    center/cover no-repeat;
+        padding: 120px 20px;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+    .hero p {
+        font-size: 20px;
+        max-width: 800px;
+        margin: auto;
+        opacity: .9;
+    }
+
+    /* -------- Section Wrapper -------- */
+    .section {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section h2 {
+        text-align: center;
+        font-size: 34px;
+        color: #0d47a1;
+        margin-bottom: 40px;
+    }
+
+    /* -------- Grid Layout -------- */
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        width: 100%;
+    }
+
+    /* -------- Resource Card -------- */
+    .resource-card {
+        background: #fff;
+        border-radius: 12px;
+        padding-bottom: 20px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: 0.3s;
+    }
+    .resource-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .resource-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .resource-card .content {
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .resource-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #003b78;
+    }
+
+    .resource-card p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* -------- Button -------- */
+    .btn {
+        margin: 0 20px;
+        padding: 10px 18px;
+        background: #0d47a1;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 8px;
+        text-align: center;
+        display: block;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: #1565c0;
+    }
+
+    /* -------- Responsive Fix -------- */
+    @media(max-width: 768px) {
+        .hero h1 { font-size: 36px; }
+        .hero p { font-size: 18px; }
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- ------------------ HERO ------------------ -->
+<section class="hero">
+    <h1>Resources Library</h1>
+    <p>Explore our curated collection of whitepapers, case studies, and industry reports designed to support digital transformation and innovation.</p>
+</section>
+
+<!-- ------------------ WHITEPAPERS ------------------ -->
+<section class="section">
+    <h2>Whitepapers</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <img src="insight2.webp">
+            <div class="content">
+                <h3>AI Transformation Playbook</h3>
+                <p>Guide on enterprise AI implementation for scalable business modernization.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-download"></i> Download</a>
+        </div>
+
+        <div class="resource-card">
+            <img src="insight3.webp">
+            <div class="content">
+                <h3>Cloud Migration Strategy</h3>
+                <p>Blueprint for seamless and secure migration to multi-cloud environments.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-download"></i> Download</a>
+        </div>
+
+        <div class="resource-card">
+            <img src="insight4.webp">
+            <div class="content">
+                <h3>Cybersecurity Framework 2025</h3>
+                <p>Modern Zero Trust security model for enterprise digital defense.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-download"></i> Download</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ------------------ CASE STUDIES ------------------ -->
+<section class="section">
+    <h2>Case Studies</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <img src="insight5.webp">
+            <div class="content">
+                <h3>Retail Digital Acceleration</h3>
+                <p>Reduced operational cost by 38% using AI-driven automation.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-file-alt"></i> View</a>
+        </div>
+
+        <div class="resource-card">
+            <img src="insight6.webp">
+            <div class="content">
+                <h3>Healthcare Data Modernization</h3>
+                <p>Transforming patient systems using secure cloud infrastructure.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-file-alt"></i> View</a>
+        </div>
+
+        <div class="resource-card">
+            <img src="insight7.webp">
+            <div class="content">
+                <h3>FinTech Automation Journey</h3>
+                <p>Improving transaction speed and lowering operational workload.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-file-alt"></i> View</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ------------------ REPORTS ------------------ -->
+<section class="section">
+    <h2>Industry Reports</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <img src="insight8.webp">
+            <div class="content">
+                <h3>IT Trends Report 2025</h3>
+                <p>Technology investments shaping global enterprise strategies.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-download"></i> Download</a>
+        </div>
+
+        <div class="resource-card">
+            <img src="insight9.webp">
+            <div class="content">
+                <h3>Cloud Cost Optimization</h3>
+                <p>Maximizing ROI across hybrid and multi-cloud ecosystems.</p>
+            </div>
+            <a href="404error.html" class="btn"><i class="fas fa-download"></i> Download</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '404error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+</body>
+</html>

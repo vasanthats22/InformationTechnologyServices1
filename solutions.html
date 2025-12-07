@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT Solutions | Stackly IT Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<style>
+/* ------------------ RESET ------------------ */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif;}
+html, body{width:100%; overflow-x:hidden;}
+body{background:#050505;color:#fff;}
+a{text-decoration:none;color:inherit;}
+
+/* ------------------ HERO ------------------ */
+.hero{
+  background: url('solution1.webp') center/cover no-repeat;
+  height:70vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  width:100vw;
+}
+.hero::after{
+  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:linear-gradient(180deg, rgba(5,10,15,0.65), rgba(0,0,0,0.65));
+}
+.hero-content{
+  position:relative; 
+  z-index:2; 
+  max-width:900px; 
+  padding:0 15px;
+  opacity:0;
+  transform: translateY(40px);
+  animation: heroFade 1.2s forwards;
+  animation-delay:0.3s;
+}
+.hero-content h1{font-size:48px; color:#00eaff; margin-bottom:15px; text-shadow:0 0 20px rgba(0,234,255,0.12);}
+.hero-content p{font-size:20px; line-height:1.7; color:#d5d5d5; margin-bottom:25px;}
+.btn{padding:12px 32px; background:#00eaff; color:#000; border-radius:8px; font-weight:600; transition:0.3s; display:inline-block;}
+.btn:hover{background:#00bcd4;}
+@keyframes heroFade{to {opacity:1; transform: translateY(0);}}
+
+/* ------------------ SECTION TITLE ------------------ */
+.section-title{
+  text-align:center; 
+  font-size:32px; 
+  color:#00eaff; 
+  margin-top:60px; 
+  margin-bottom:25px;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay:0.6s;
+}
+
+/* ------------------ CARDS ------------------ */
+.overview-cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:25px;
+  padding:20px 15px 50px;
+  width:100vw;
+  max-width:100%;
+}
+
+.card{
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid rgba(255,255,255,0.1);
+  opacity:0;
+  transform: scale(0.95);
+  animation: cardFade 0.8s forwards;
+}
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+.card:nth-child(4){animation-delay:0.8s;}
+.card:nth-child(5){animation-delay:1s;}
+.card:nth-child(6){animation-delay:1.2s;}
+.card i{font-size:40px; margin-bottom:15px;}
+.card h3{font-size:22px; margin-bottom:12px;}
+.card p{color:#f0f0f0; line-height:1.6; font-size:15px; margin-bottom:15px;}
+.card:hover{transform:translateY(-8px) scale(1.03); box-shadow:0 0 25px rgba(255,255,255,0.15);}
+.card:nth-child(1){background: linear-gradient(135deg, #00c6ff, #0072ff); color:#fff;}
+.card:nth-child(2){background: linear-gradient(135deg, #ff7eb9, #ff758c); color:#fff;}
+.card:nth-child(3){background: linear-gradient(135deg, #8e2de2, #4a00e0); color:#fff;}
+.card:nth-child(4){background: linear-gradient(135deg, #43cea2, #185a9d); color:#fff;}
+.card:nth-child(5){background: linear-gradient(135deg, #f7971e, #ffd200); color:#fff;}
+.card:nth-child(6){background: linear-gradient(135deg, #ff512f, #dd2476); color:#fff;}
+.card-btn{padding:10px 25px; background: rgba(0,0,0,0.2); color:#fff; border-radius:6px; font-weight:600; transition:0.3s; text-decoration:none;}
+.card-btn:hover{background: rgba(0,0,0,0.4); transform: scale(1.05);}
+@keyframes cardFade{to {opacity:1; transform: scale(1);}}
+
+/* ------------------ DETAILED SECTIONS (ZIG-ZAG) ------------------ */
+.detailed-section{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:70px 15px;
+  flex-wrap:wrap;
+  opacity:0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+  width:100vw;
+}
+.detailed-section:nth-child(odd) .detailed-content{order:1;}
+.detailed-section:nth-child(odd) .detailed-image-wrapper{order:2;}
+.detailed-section:nth-child(even) .detailed-content{order:2;}
+.detailed-section:nth-child(even) .detailed-image-wrapper{order:1;}
+.detailed-image-wrapper, .detailed-content{box-sizing:border-box;}
+.detailed-image-wrapper{flex:1 1 45%; max-width:100%; border-radius:14px; overflow:hidden; position:relative; transition: transform 0.5s;}
+.detailed-image-wrapper img{width:100%; height:auto; object-fit:cover; display:block; transition:0.5s;}
+.detailed-image-wrapper:hover img{transform:scale(1.06); filter:brightness(0.78);}
+.detailed-content{flex:1 1 45%; max-width:100%;}
+.detailed-content h2{font-size:28px;color:#00eaff;margin-bottom:15px;}
+.detailed-content p{font-size:16px;color:#000;line-height:1.7;}
+
+/* ------------------ HIGHLIGHT ------------------ */
+.highlight{
+  background:linear-gradient(135deg, rgba(0,234,255,0.06), rgba(0,0,0,0.6));
+  margin:70px 15px;
+  padding:45px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid rgba(0,234,255,0.06);
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay:1.5s;
+}
+.highlight h2{color:#00eaff;font-size:30px;margin-bottom:18px;}
+.highlight p{font-size:18px;color:#000;max-width:900px;margin:auto;line-height:1.7;}
+
+/* ------------------ GENERAL ANIMATION ------------------ */
+@keyframes fadeInUp{to {opacity:1; transform: translateY(0);}}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media(max-width:1024px){
+  .hero-content h1{font-size:38px;}
+  .hero-content p{font-size:18px;}
+  .overview-cards{grid-template-columns: repeat(2, 1fr);}
+  .detailed-section{flex-direction:column;}
+  .detailed-section .detailed-content,
+  .detailed-section .detailed-image-wrapper{order:unset;}
+}
+@media(max-width:600px){
+  .hero-content h1{font-size:30px;}
+  .hero-content p{font-size:16px;}
+  .highlight h2{font-size:26px;}
+  .highlight p{font-size:15px;}
+  .overview-cards{grid-template-columns: 1fr;}
+}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+<div id="header-placeholder"></div>
+  
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Empowering Businesses with Smart IT Solutions</h1>
+    <p>Secure, scalable, and cloud-ready services — from infrastructure and operations to security and disaster recovery.</p>
+    <a href="404error.html" class="btn">Explore Our Solutions</a>
+  </div>
+</section>
+
+<h2 class="section-title">Our Core IT Solutions</h2>
+
+<!-- CARDS -->
+<section class="overview-cards">
+  <div class="card"><i class="fas fa-cloud"></i><h3>Cloud Transformation</h3><p>Accelerate business performance with cloud migration, automation, DevOps and managed cloud operations for multi-cloud environments.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+  <div class="card"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3><p>Comprehensive protection with SOC monitoring, threat intelligence, zero-trust architecture and compliance services.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+  <div class="card"><i class="fas fa-network-wired"></i><h3>Infrastructure & Operations</h3><p>24/7 managed infrastructure, network engineering, server orchestration and proactive monitoring to keep services running.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+  <div class="card"><i class="fas fa-database"></i><h3>Data & Analytics</h3><p>Design, manage and secure data platforms with real-time analytics, backup strategies and data governance frameworks.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+  <div class="card"><i class="fas fa-sync-alt"></i><h3>Business Continuity</h3><p>Backup automation, failover strategies and disaster recovery planning to minimize downtime and protect revenue.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+  <div class="card"><i class="fas fa-headset"></i><h3>Managed Services</h3><p>Dedicated 24/7 support, ticketing, SLA-driven operations and on-demand expert assistance for enterprise needs.</p><a href="404error.html" class="card-btn">Learn More</a></div>
+</section>
+
+<!-- DETAILED SECTIONS -->
+<section class="detailed-section">
+  <div class="detailed-content"><h2>AI-Powered Digital Transformation</h2><p>Modernize applications and workflows with AI-assisted automation, cloud-native architectures and observability pipelines. We help teams move faster and operate smarter.</p></div>
+  <div class="detailed-image-wrapper"><img src="solution2.webp" alt="Digital Transformation" /></div>
+</section>
+
+<section class="detailed-section">
+  <div class="detailed-image-wrapper"><img src="solution3.webp" alt="Managed Security" /></div>
+  <div class="detailed-content"><h2>Advanced Security & Compliance</h2><p>From endpoint protection and SIEM to vulnerability management and compliance audits, we build resilience into your infrastructure and processes.</p></div>
+</section>
+
+<section class="detailed-section">
+  <div class="detailed-content"><h2>Business Continuity & DR</h2><p>Plan and validate disaster recovery runbooks, automate backups, and design multi-region failover to ensure operational continuity when it matters most.</p></div>
+  <div class="detailed-image-wrapper"><img src="solution4.webp" alt="Business Continuity" /></div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section class="highlight">
+  <h2>Why Choose Stackly IT Solutions?</h2>
+  <p>We combine deep technical expertise with practical experience to deliver secure, scalable and cost-effective IT services. Our approach focuses on measurable outcomes — faster time to market, reduced risk, and improved operational efficiency.</p>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+</body>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '404error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
+
+
+
+</html>

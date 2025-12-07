@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly IT Services - Home</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+<style>
+/* ----------- RESET ----------- */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
+html, body {width:100%; height:100%; scroll-behavior:smooth; overflow-x:hidden;}
+a {text-decoration:none; color:inherit;}
+img {max-width:100%; display:block;}
+
+/* ----------- BODY & HERO ----------- */
+body {background:#f5f5f5; color:#333;}
+.hero {
+  background: url('solution2.webp') center/cover no-repeat;
+  height: 100vh; display:flex; justify-content:center; align-items:center; text-align:center;
+  color:#fff; padding:0 20px; position:relative; overflow:hidden;
+}
+.hero::after {
+  content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.55); z-index:1;
+}
+.hero-content {
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  animation:fadeInUp 1s forwards; opacity:0; transform:translateY(30px);
+}
+.hero-content h1 {
+  font-size:3rem; margin-bottom:15px; text-align:center; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+.hero-content p {
+  font-size:1.2rem; margin-bottom:25px; max-width:700px; text-align:center; text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+.hero-content .btn {background:#ff6600; color:#fff; padding:12px 30px; border-radius:5px; font-weight:bold; transition:0.3s;}
+.hero-content .btn:hover {background:#e65c00; transform: scale(1.05);}
+
+/* FIX — prevent hero shapes from causing horizontal scroll */
+.hero-shape {
+  position:absolute; border-radius:50%; background:rgba(255,255,255,0.1);
+  animation:moveShape 15s linear infinite;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+/* FIX — reduce possible overflow slightly */
+.hero-shape:nth-child(1){width:180px; height:180px; top:10%; left:15%; animation-delay:0s;}
+.hero-shape:nth-child(2){width:130px; height:130px; top:70%; left:70%; animation-delay:5s;}
+.hero-shape:nth-child(3){width:90px; height:90px; top:40%; left:40%; animation-delay:10s;}
+
+@keyframes moveShape {
+  0%{transform: translateY(0) rotate(0deg);}
+  50%{transform: translateY(-20px) rotate(180deg);}
+  100%{transform: translateY(0) rotate(360deg);}
+}
+
+/* ----------- SERVICES SECTION ----------- */
+.services {padding:80px 20px; background:#f9f9f9; text-align:center;}
+.services h2 {font-size:2.5rem; margin-bottom:50px; color:#222;}
+.service-container {
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px;
+  max-width:1200px; margin:auto;
+  overflow-x:hidden; /* FIX */
+}
+.service-box {
+  background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.1); 
+  transition: transform 0.4s, box-shadow 0.4s, opacity 1s ease; opacity:0; transform:translateY(30px); text-align:center;
+}
+.service-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:0 15px 25px rgba(0,0,0,0.25);
+  overflow:hidden; /* FIX */
+}
+.service-box i {font-size:3rem; color:#ff6600; margin-bottom:20px;}
+.service-box h3 {font-size:1.5rem; margin-bottom:15px;}
+.service-box p {font-size:1rem; color:#666; margin-bottom:20px;}
+.service-box .btn-service {background:#ff6600; color:#fff; padding:10px 20px; border-radius:5px; font-weight:bold; transition:0.3s;}
+.service-box .btn-service:hover {background:#e65c00; transform: scale(1.05);}
+
+/* ----------- HIGHLIGHT SECTION ----------- */
+.highlight {padding:80px 20px; background:linear-gradient(135deg,#0a1f44,#001f2d); color:#fff; text-align:center;}
+.highlight h2 {font-size:2.5rem; margin-bottom:20px;}
+.highlight p {font-size:1.2rem; max-width:800px; margin:auto; line-height:1.6; opacity:0; transform:translateY(30px); animation:fadeInUp 1s forwards; animation-delay:0.5s;}
+
+/* ----------- ANIMATIONS ----------- */
+@keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+
+/* ----------- RESPONSIVE ----------- */
+@media(max-width:1024px){
+  .hero-content h1{font-size:2.5rem;}
+  .hero-content p{font-size:1.1rem;}
+}
+@media(max-width:768px){
+  .hero {height:80vh;}
+  .hero-content h1{font-size:2.2rem;}
+  .hero-content p{font-size:1rem;}
+  .services h2, .highlight h2{font-size:2rem;}
+}
+@media(max-width:480px){
+  .hero {height:70vh;}
+  .hero-content h1{font-size:1.8rem;}
+  .hero-content p{font-size:0.9rem;}
+  .services h2, .highlight h2{font-size:1.6rem;}
+  .service-box {padding:20px 15px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-shape"></div>
+  <div class="hero-shape"></div>
+  <div class="hero-shape"></div>
+  <div class="hero-content">
+    <h1>Innovative IT Services for Modern Businesses</h1>
+    <p>From Cloud Computing and Cybersecurity to AI-driven solutions, Stackly IT Services helps businesses succeed in the digital era with smart, scalable technology.</p>
+    <a href="404error.html" class="btn">Explore Services</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Our Core IT Services</h2>
+  <div class="service-container">
+    <div class="service-box">
+      <i class="fas fa-cloud"></i>
+      <h3>Cloud Computing</h3>
+      <p>Move your operations to secure, scalable, and cost-efficient cloud platforms.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+    <div class="service-box">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Cybersecurity</h3>
+      <p>Protect your business from digital threats with advanced cybersecurity solutions.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+    <div class="service-box">
+      <i class="fas fa-robot"></i>
+      <h3>AI & Automation</h3>
+      <p>Optimize workflows and gain insights with AI-powered automation tools.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+    <div class="service-box">
+      <i class="fas fa-network-wired"></i>
+      <h3>Managed IT Services</h3>
+      <p>Comprehensive monitoring, support, and management of your IT operations.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+    <div class="service-box">
+      <i class="fas fa-database"></i>
+      <h3>Data Management</h3>
+      <p>Structured storage, analytics, and governance solutions for your enterprise data.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+    <div class="service-box">
+      <i class="fas fa-code"></i>
+      <h3>Software Development</h3>
+      <p>Custom web and mobile applications with modern UX and robust performance.</p>
+      <a href="404error.html" class="btn-service">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section class="highlight">
+  <h2>Why Choose Stackly IT Services?</h2>
+  <p>We deliver measurable results with cost-effective IT solutions, helping businesses stay secure, agile, and competitive in the digital era.</p>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+
+</body>
+</html>
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      // Header Interactions
+      const menuBtn = document.querySelector('.menu-btn');
+      const homeArrow = document.querySelector('.home-link span');
+
+      menuBtn?.addEventListener('click', () => {
+        document.getElementById('navBar').classList.toggle('active');
+      });
+
+      homeArrow?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const li = event.target.closest('li');
+        li.classList.toggle('show-submenu');
+      });
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Subscribe button JS (after footer is loaded)
+      const subscribeBtn = document.getElementById('subscribeButton');
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailError = document.getElementById('emailError');
+
+      subscribeBtn?.addEventListener('click', function(e) {
+        const email = emailInput.value.trim();
+        const valid = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (valid.test(email)) {
+          // Redirect to 404error.html only if email is valid
+          window.location.href = '404error.html';
+        } else {
+          e.preventDefault();
+          emailError.style.display = 'block';
+          emailInput.style.border = '2px solid #ff7a00';
+        }
+      });
+
+      emailInput?.addEventListener('input', function() {
+        emailError.style.display = 'none';
+        emailInput.style.border = 'none';
+      });
+    });
+
+  // Animate service boxes on scroll
+  const serviceBoxes = document.querySelectorAll('.service-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        entry.target.style.animation = `fadeInUp 0.8s forwards`;
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+      }
+    });
+  }, {threshold:0.2});
+  serviceBoxes.forEach(box => observer.observe(box));
+</script>
